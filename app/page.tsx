@@ -3,7 +3,7 @@
 import { useRef, useState } from "react"
 import { Code } from "@/editor/code"
 import { Directory, File, Type, findFileByName } from "@/utils/file-manager"
-import { Files, FlaskConical, Settings } from "lucide-react"
+import { Files, FlaskConical, Settings, X } from "lucide-react"
 import { useResizable } from "react-resizable-layout"
 
 import { useFilesFromSandbox } from "@/hooks/useFilesFromSandbox"
@@ -59,7 +59,11 @@ export default function IndexPage() {
         <div className="layout-header border-[2px] border-secondary"></div>
         <div className="layout-tab flex  flex-col justify-between border-x-[2px] border-secondary p-1">
           <div className="flex flex-col ">
-            <Button size="default" variant={"ghost"} className="w-full px-2">
+            <Button
+              size="default"
+              variant={"ghost"}
+              className="w-full px-2 text-muted-foreground"
+            >
               <Files size={18} />
             </Button>
             <Button size="default" variant={"ghost"} className="w-full px-2">
@@ -77,7 +81,10 @@ export default function IndexPage() {
           <div className="color-white flex h-full w-full flex-col overflow-hidden ">
             <div className="flex grow">
               <div className="shrink-0" style={{ width: fileW }}>
-                <div className=" w-full">
+                <div className="w-full">
+                  <div className=" h-8 w-full border-b-[2px] border-secondary">
+                    <span>Hey</span>
+                  </div>
                   <FileTree
                     rootDir={rootDir}
                     selectedFile={selectedFile}
@@ -88,6 +95,21 @@ export default function IndexPage() {
               <ResizeSeparator direction="vertical" {...fileDragBarProps} />
               <div className="flex grow flex-col">
                 <div className="grow">
+                  <div className=" flex h-8 w-full border-b-[2px] border-secondary ">
+                    <div className="flex items-center gap-2 border-r-[1px] p-2 hover:cursor-pointer hover:bg-secondary">
+                      <span className=" text-sm">App.js</span>
+                      <Button className="h-fit p-0" variant={"ghost"}>
+                        <X size={12} />
+                      </Button>
+                    </div>
+
+                    <div className="flex items-center gap-2 border-r-[1px] p-2 hover:cursor-pointer hover:bg-secondary">
+                      <span className=" text-sm">Appaskdjhg.js</span>
+                      <Button className="h-fit p-0" variant={"ghost"}>
+                        <X size={12} />
+                      </Button>
+                    </div>
+                  </div>
                   <Code
                     selectedFile={selectedFile}
                     width={`${fileW}px`}

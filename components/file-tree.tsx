@@ -63,7 +63,7 @@ const FileDiv = ({
   return (
     <div
       className={clsx(
-        "flex w-full items-center hover:cursor-pointer hover:bg-[#242424]",
+        "flex w-full items-center hover:cursor-pointer hover:bg-secondary",
         isSelected ? "bg-muted" : "transparent"
       )}
       style={{ paddingLeft: depth * 16 }}
@@ -75,7 +75,6 @@ const FileDiv = ({
           "ml-[1px] w-full overflow-hidden text-ellipsis text-muted-foreground select-none",
           isSelected ? "text-primary" : ""
         )}
-        style={{ color: isSelected ? "white" : "" }}
       >
         {file.name}
       </span>
