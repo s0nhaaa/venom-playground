@@ -42,8 +42,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div className="max-h-screen w-full">{children}</div>
-            <TailwindIndicator />
-            <ThemeToggle />
+            {/* <TailwindIndicator /> */}
+            {/* <ThemeToggle /> */}
           </ThemeProvider>
         </body>
       </html>

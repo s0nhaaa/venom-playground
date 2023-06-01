@@ -90,7 +90,8 @@ export default function IndexPage() {
                 <div className="grow">
                   <Code
                     selectedFile={selectedFile}
-                    // width={`${fileW}px`}
+                    width={`${fileW}px`}
+                    height={`${terminalH}px`}
                   />
                 </div>
                 <ResizeSeparator

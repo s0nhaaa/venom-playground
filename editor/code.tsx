@@ -5,10 +5,12 @@ import Editor from "@monaco-editor/react"
 
 export const Code = ({
   selectedFile,
-}: // width,
-{
+  width,
+  height,
+}: {
   selectedFile: File | undefined
-  // width: string
+  width: string
+  height: string
 }) => {
   if (!selectedFile) return null
 
@@ -21,8 +23,9 @@ export const Code = ({
   return (
     <div className="h-full w-full">
       <Editor
-        // width={"calc(100vw - 56px - " + width + ")"}
-        // height={300}
+        width={"calc(100vw - 56px - " + width + ")"}
+        height={"calc(100vh - 52px - " + height + ")"}
+        className="h-full w-full"
         language={language}
         value={code}
         theme="vs-dark"
